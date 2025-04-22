@@ -30,7 +30,7 @@ scheduler.registerTask(helloTask);
 ## 📦 Instalação e uso
 
 ```bash
-git clone https://github.com/seu-usuario/scheduling-module.git
+git clone https://github.com/franciscobressa/scheduling-module.git
 cd scheduling-module
 npm install
 npm run dev
