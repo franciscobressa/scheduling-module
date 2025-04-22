@@ -33,7 +33,7 @@ scheduler.registerTask(helloTask);
 git clone https://github.com/franciscobressa/scheduling-module.git
 cd scheduling-module
 npm install
-npm run dev
+npm run start
 ```
 
 
