@@ -10,7 +10,7 @@ export class Task {
   id: string;
   interval?: number;
   fixedTime?: string;
-  retryLimit?: number;
+  retryLimit: number;
   fallback?: () => void;
   execute: () => Promise<void>;
 
