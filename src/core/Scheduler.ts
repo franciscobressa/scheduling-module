@@ -1,7 +1,9 @@
 import { Logger } from "../utils/Logger";
+import { ExecutionReport } from "./ExecutionReport";
 import { Task } from "./Task";
 
 export class Scheduler {
+  private report = new ExecutionReport();
   private tasks: Task[] = [];
 
   registerTask(task: Task) {
@@ -28,9 +30,11 @@ export class Scheduler {
       try {
         await task.execute();
         Logger.logSuccess(task.id);
+        this.report.logSuccess(task.id);
         return;
       } catch (error) {
         Logger.logError(task.id, error);
+        this.report.logError(task.id, error);
         attempts++;
 
         if (attempts <= task.retryLimit) {
