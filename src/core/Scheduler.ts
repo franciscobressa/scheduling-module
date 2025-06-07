@@ -58,6 +58,13 @@ export class Scheduler {
       if (now.getHours() === hour && now.getMinutes() === minute) {
         this.runTask(task);
       }
+      scheduleNext();
+    };
+
+    const scheduleNext = () => {
+      const now = new Date();
+      const delay = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+      setTimeout(checkTime, delay);
     };
 
     // Executa uma checagem imediata para evitar perder o horário
