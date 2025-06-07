@@ -60,6 +60,8 @@ export class Scheduler {
       }
     };
 
+    // Executa uma checagem imediata para evitar perder o horário
+    checkTime();
     // Faz a verificação a cada minuto
     setInterval(checkTime, 60 * 1000);
   }
